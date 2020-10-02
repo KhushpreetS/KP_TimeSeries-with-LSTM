@@ -17,7 +17,7 @@ X = X.reshape((X.shape[0], X.shape[1], 1))
 # define model
 lr = 0.001
 adam = optimizers.Adam(lr)
-filepath=r"C:\Users\OneDrive - UiPath\Desktop\covid\model.h5"
+filepath=r"C:\Users\Desktop\covid\model.h5"
 model = Sequential()
 model.add(LSTM(50, activation='relu', input_shape=(3, 1)))
 model.add(Dense(1))
@@ -34,7 +34,7 @@ op=math.ceil(op)
 print("predicted no of cases:"+str(op))
 model_json = model.to_json()
 
-with open(r"C:\Users\OneDrive - UiPath\Desktop\covid\model.json", "w") as json_file:
+with open(r"C:\Users\Desktop\covid\model.json", "w") as json_file:
     json_file.write(model_json)
     
 # serialize weights to HDF5
